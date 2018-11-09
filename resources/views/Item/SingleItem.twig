@@ -29,4 +29,12 @@
             {{ ImageCarouselOverride }}
         {% endif %}
     </div>
+    <div slot="Eigenschaft">
+    {%  for variationProperty in item.documents[0].data.variationProperties %}
+    {% if variationProperty .property.id == 2 %}
+    Name der Eigenschaft mit der ID 2: {{ variationProperty.property.names.name }}
+    Wert der Eigenschaft mit der ID 2:   {{ variationProperty.values.value }}
+    {% endif %}
+    {% endfor %}
+</div>
 </single-item>
